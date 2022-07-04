@@ -21,10 +21,10 @@ public class AddressServiceImpl implements AddressService {
 	AddressRepository repository;
 
 	@Override
-	public void insertAddress(Address address) throws AddressServiceException {
+	public Address insertAddress(Address address) throws AddressServiceException {
 		log.debug("Entered into insertAddress( )");
 		try {
-			repository.save(address);
+			return repository.save(address);
 		} catch (Exception e) {
 			log.error("Exception occured while inserting address ", e);
 			throw new AddressServiceException("Failed to insert Address", e);

@@ -22,10 +22,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	EmployeeRepository repository;
 
 	@Override
-	public void insertEmployee(EmployeeDao employee) throws EmployeeServiceException {
+	public EmployeeDao insertEmployee(EmployeeDao employee) throws EmployeeServiceException {
 		log.debug("Entered into insertEmployee( )");
 		try {
-			repository.save(employee);
+			return repository.save(employee);
 		} catch (Exception e) {
 			log.error("Exception occured while inserting employee ", e);
 			throw new EmployeeServiceException("Failed to insert Employee", e);

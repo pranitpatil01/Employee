@@ -38,7 +38,8 @@ public class EmployeeController {
 		log.debug("Entered into addEmployee( )");
 		JsonResponse<Object> vo= new JsonResponse<Object>();
 		try {
-			service.insertEmployee(employee);
+			EmployeeDao emp = service.insertEmployee(employee);
+			vo.setResponseBody(emp);
 			vo.setResponseDetail(JSONTags.TAG_STATUS_SUCCESS);
 			vo.setStatus(true);
 		}catch (EmployeeServiceException ex) {

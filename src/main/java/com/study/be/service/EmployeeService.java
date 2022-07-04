@@ -10,7 +10,7 @@ import com.study.be.exception.EmployeeServiceException;
 @Service
 public interface EmployeeService {
 	
-	public void insertEmployee(EmployeeDao employee) throws EmployeeServiceException;
+	public EmployeeDao insertEmployee(EmployeeDao employee) throws EmployeeServiceException;
 	public EmployeeDao getEmployee(Integer id) throws EmployeeServiceException;
 	public List<EmployeeDao> getAllEmployee() throws EmployeeServiceException;
 	public EmployeeDao modifyEmployee(EmployeeDao employee) throws EmployeeServiceException;
